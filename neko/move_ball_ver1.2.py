@@ -14,25 +14,33 @@ canvas.place(x=0, y=0)
 canvas.create_oval(10, 10, 140, 140, fill="red",tag="oval")
 """
 # 動かす
-dx=1
-dy=1
 y=10
 x=10
-def make_oval(x,y,dx,dy):
-    canvas.create_oval(x, y, x+140, y+140, fill="red",tag="oval")
-    return 1
+dx=1
+dy=1
+log_dx=dx
+log_dy=dy
+#unit_dx,unit_dy=dx/(dx**2+dy**2)**0.5,dy/(dx**2+dy**2)**0.5
+size=140
 
 while 1:
     time.sleep(1/500)
     x=x+dx
     y=y+dy
-    canvas.create_oval(x, y, x+140, y+140, fill="red",tag="oval")
-    if x>=width-140 or x<=10:
-        dx=-dx
-        dy=random.uniform(-1,-9)
-    if y>=height-140 or y<=10:
-        dy=-dy
-        dx=random.uniform(-1,-9)
+    canvas.create_oval(x, y, x+ size, y+ size, fill="red",tag="oval")
+    if x>=width-size or x<=10:
+        dx=-dx/abs(dx)
+        dx=random.uniform(1,9)*dx
+    if y>=height-size or y<=10:
+        dy=-dy/abs(dy)
+        dy=random.uniform(1,9)*dy
+    # fix_me
+    if dx!=log_dx or dy!=log_dy:
+        unit_dx,unit_dy=dx/(dx**2+dy**2)**0.5,dy/(dx**2+dy**2)**0.5
+        dx=dx/unit_dx
+        dy=dy/unit_dy
+        log_dx=dx
+        log_dy=dy
 
     root.update()
     canvas.delete("oval")
