@@ -7,6 +7,7 @@ width=1280
 height=720
 root=tk.Tk()
 root.geometry("1280x700")
+root.title("move ball")
 # キャンバス
 canvas = tk.Canvas(root,bg="white", width = 1279, height = 691)
 canvas.place(x=0, y=0)
