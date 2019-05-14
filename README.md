@@ -8,7 +8,7 @@ for animal to fun
 * python
 
 ## Demo
-![DEMO_moveball](https://github.com/wiki/Kame256/fun_animal/demo/move_ball.GIF)
+![DEMO_moveball](https://github.com/Kame256/fun_animal/wiki/demo/move_ball.GIF)
 ## VS. 
 
 ## Requirement
