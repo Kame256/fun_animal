@@ -1,4 +1,4 @@
-import tkinter as tk
+﻿import tkinter as tk
 import os, sys, time
 import random
 import math
@@ -42,7 +42,7 @@ while 1:
         random_angle=random.choice(rand_list)*dy
     if random_angle!=log_angle:
         log_angle=random_angle
-        speed=random.uniform(2,6)
+        speed=random.uniform(0.5,4)
     root.update()
     canvas.delete("oval")
 
