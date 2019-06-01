@@ -42,7 +42,7 @@ while 1:
         random_angle=random.choice(rand_list)*dy
     if random_angle!=log_angle:
         log_angle=random_angle
-        speed=random.uniform(0.5,4)
+        speed=random.uniform(1,6)
     root.update()
     canvas.delete("oval")
 
